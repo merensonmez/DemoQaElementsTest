@@ -129,7 +129,19 @@ public class DemoQaTest {
         Thread.sleep(1000);
         js.executeScript("window.scrollBy(0,500)");
         Thread.sleep(1000);
-        
+
+        driver.get("https://demoqa.com/");
+        Thread.sleep(1000);
+        driver.navigate().back();
+
+        // Broken links - Images Test
+        WebElement brokenLinks = driver.findElement(By.xpath("(//li[@id='item-6'])[1]"));
+        brokenLinks.click();
+        Thread.sleep(1000);
+
+        // Upload and Download test
+        WebElement uploadAndDownload = driver.findElement(By.xpath("(//li[@id='item-7'])[1]"));
+        uploadAndDownload.click();
 
     }
 }
